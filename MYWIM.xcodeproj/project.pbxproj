@@ -8,13 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		62134AB925147DF80009A526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62134AB825147DF80009A526 /* AppDelegate.swift */; };
-		62134ABB25147DF80009A526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62134ABA25147DF80009A526 /* SceneDelegate.swift */; };
-		62134ABD25147DF80009A526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62134ABC25147DF80009A526 /* ViewController.swift */; };
+		62134ABD25147DF80009A526 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62134ABC25147DF80009A526 /* LoginVC.swift */; };
 		62134AC025147DF80009A526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62134ABE25147DF80009A526 /* Main.storyboard */; };
 		62134AC225147DFE0009A526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62134AC125147DFE0009A526 /* Assets.xcassets */; };
 		62134AC525147DFE0009A526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62134AC325147DFE0009A526 /* LaunchScreen.storyboard */; };
 		62134AD025147DFF0009A526 /* MYWIMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62134ACF25147DFF0009A526 /* MYWIMTests.swift */; };
 		62134ADB25147DFF0009A526 /* MYWIMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62134ADA25147DFF0009A526 /* MYWIMUITests.swift */; };
+		621610AE251BB76700EF585D /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621610AD251BB76700EF585D /* ResetPasswordVC.swift */; };
+		621610B0251BB77F00EF585D /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621610AF251BB77F00EF585D /* DashboardVC.swift */; };
+		621610B2251BB79D00EF585D /* ProjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621610B1251BB79D00EF585D /* ProjectDetailVC.swift */; };
+		621610B4251BBAA400EF585D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621610B3251BBAA400EF585D /* Helper.swift */; };
+		624AFBF32514C6920096E9B0 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE02514C6910096E9B0 /* Poppins-ExtraLight.ttf */; };
+		624AFBF42514C6920096E9B0 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE12514C6910096E9B0 /* Poppins-ThinItalic.ttf */; };
+		624AFBF52514C6920096E9B0 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE22514C6910096E9B0 /* Poppins-ExtraLightItalic.ttf */; };
+		624AFBF62514C6920096E9B0 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE32514C6910096E9B0 /* Poppins-BoldItalic.ttf */; };
+		624AFBF72514C6920096E9B0 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE42514C6910096E9B0 /* Poppins-Light.ttf */; };
+		624AFBF82514C6920096E9B0 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE52514C6910096E9B0 /* Poppins-Medium.ttf */; };
+		624AFBF92514C6920096E9B0 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE62514C6910096E9B0 /* Poppins-SemiBoldItalic.ttf */; };
+		624AFBFA2514C6920096E9B0 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE72514C6910096E9B0 /* Poppins-ExtraBoldItalic.ttf */; };
+		624AFBFB2514C6920096E9B0 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE82514C6910096E9B0 /* Poppins-ExtraBold.ttf */; };
+		624AFBFC2514C6920096E9B0 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBE92514C6910096E9B0 /* Poppins-BlackItalic.ttf */; };
+		624AFBFD2514C6920096E9B0 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBEA2514C6910096E9B0 /* OFL.txt */; };
+		624AFBFE2514C6920096E9B0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBEB2514C6910096E9B0 /* Poppins-Regular.ttf */; };
+		624AFBFF2514C6920096E9B0 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBEC2514C6910096E9B0 /* Poppins-LightItalic.ttf */; };
+		624AFC002514C6920096E9B0 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBED2514C6910096E9B0 /* Poppins-Bold.ttf */; };
+		624AFC012514C6920096E9B0 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBEE2514C6910096E9B0 /* Poppins-Black.ttf */; };
+		624AFC022514C6920096E9B0 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBEF2514C6910096E9B0 /* Poppins-Thin.ttf */; };
+		624AFC032514C6920096E9B0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBF02514C6920096E9B0 /* Poppins-SemiBold.ttf */; };
+		624AFC042514C6920096E9B0 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBF12514C6920096E9B0 /* Poppins-Italic.ttf */; };
+		624AFC052514C6920096E9B0 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 624AFBF22514C6920096E9B0 /* Poppins-MediumItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +59,7 @@
 /* Begin PBXFileReference section */
 		62134AB525147DF80009A526 /* MYWIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYWIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62134AB825147DF80009A526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		62134ABA25147DF80009A526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62134ABC25147DF80009A526 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		62134ABC25147DF80009A526 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		62134ABF25147DF80009A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62134AC125147DFE0009A526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62134AC425147DFE0009A526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +70,29 @@
 		62134AD625147DFF0009A526 /* MYWIMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYWIMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62134ADA25147DFF0009A526 /* MYWIMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYWIMUITests.swift; sourceTree = "<group>"; };
 		62134ADC25147DFF0009A526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621610AD251BB76700EF585D /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		621610AF251BB77F00EF585D /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		621610B1251BB79D00EF585D /* ProjectDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailVC.swift; sourceTree = "<group>"; };
+		621610B3251BBAA400EF585D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		624AFBE02514C6910096E9B0 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		624AFBE12514C6910096E9B0 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		624AFBE22514C6910096E9B0 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		624AFBE32514C6910096E9B0 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		624AFBE42514C6910096E9B0 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		624AFBE52514C6910096E9B0 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		624AFBE62514C6910096E9B0 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		624AFBE72514C6910096E9B0 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		624AFBE82514C6910096E9B0 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		624AFBE92514C6910096E9B0 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		624AFBEA2514C6910096E9B0 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		624AFBEB2514C6910096E9B0 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		624AFBEC2514C6910096E9B0 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		624AFBED2514C6910096E9B0 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		624AFBEE2514C6910096E9B0 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		624AFBEF2514C6910096E9B0 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		624AFBF02514C6920096E9B0 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		624AFBF12514C6920096E9B0 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		624AFBF22514C6920096E9B0 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +144,16 @@
 			isa = PBXGroup;
 			children = (
 				62134AB825147DF80009A526 /* AppDelegate.swift */,
-				62134ABA25147DF80009A526 /* SceneDelegate.swift */,
-				62134ABC25147DF80009A526 /* ViewController.swift */,
 				62134ABE25147DF80009A526 /* Main.storyboard */,
+				62134ABC25147DF80009A526 /* LoginVC.swift */,
+				621610AD251BB76700EF585D /* ResetPasswordVC.swift */,
+				621610AF251BB77F00EF585D /* DashboardVC.swift */,
+				621610B1251BB79D00EF585D /* ProjectDetailVC.swift */,
+				621610B3251BBAA400EF585D /* Helper.swift */,
 				62134AC125147DFE0009A526 /* Assets.xcassets */,
 				62134AC325147DFE0009A526 /* LaunchScreen.storyboard */,
 				62134AC625147DFE0009A526 /* Info.plist */,
+				624AFBDF2514C6910096E9B0 /* Poppins */,
 			);
 			path = MYWIM;
 			sourceTree = "<group>";
@@ -126,6 +174,32 @@
 				62134ADC25147DFF0009A526 /* Info.plist */,
 			);
 			path = MYWIMUITests;
+			sourceTree = "<group>";
+		};
+		624AFBDF2514C6910096E9B0 /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				624AFBE02514C6910096E9B0 /* Poppins-ExtraLight.ttf */,
+				624AFBE12514C6910096E9B0 /* Poppins-ThinItalic.ttf */,
+				624AFBE22514C6910096E9B0 /* Poppins-ExtraLightItalic.ttf */,
+				624AFBE32514C6910096E9B0 /* Poppins-BoldItalic.ttf */,
+				624AFBE42514C6910096E9B0 /* Poppins-Light.ttf */,
+				624AFBE52514C6910096E9B0 /* Poppins-Medium.ttf */,
+				624AFBE62514C6910096E9B0 /* Poppins-SemiBoldItalic.ttf */,
+				624AFBE72514C6910096E9B0 /* Poppins-ExtraBoldItalic.ttf */,
+				624AFBE82514C6910096E9B0 /* Poppins-ExtraBold.ttf */,
+				624AFBE92514C6910096E9B0 /* Poppins-BlackItalic.ttf */,
+				624AFBEA2514C6910096E9B0 /* OFL.txt */,
+				624AFBEB2514C6910096E9B0 /* Poppins-Regular.ttf */,
+				624AFBEC2514C6910096E9B0 /* Poppins-LightItalic.ttf */,
+				624AFBED2514C6910096E9B0 /* Poppins-Bold.ttf */,
+				624AFBEE2514C6910096E9B0 /* Poppins-Black.ttf */,
+				624AFBEF2514C6910096E9B0 /* Poppins-Thin.ttf */,
+				624AFBF02514C6920096E9B0 /* Poppins-SemiBold.ttf */,
+				624AFBF12514C6920096E9B0 /* Poppins-Italic.ttf */,
+				624AFBF22514C6920096E9B0 /* Poppins-MediumItalic.ttf */,
+			);
+			path = Poppins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +306,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				624AFC022514C6920096E9B0 /* Poppins-Thin.ttf in Resources */,
+				624AFC052514C6920096E9B0 /* Poppins-MediumItalic.ttf in Resources */,
+				624AFBFD2514C6920096E9B0 /* OFL.txt in Resources */,
+				624AFBF52514C6920096E9B0 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				624AFBFC2514C6920096E9B0 /* Poppins-BlackItalic.ttf in Resources */,
+				624AFBF32514C6920096E9B0 /* Poppins-ExtraLight.ttf in Resources */,
+				624AFC032514C6920096E9B0 /* Poppins-SemiBold.ttf in Resources */,
+				624AFBF62514C6920096E9B0 /* Poppins-BoldItalic.ttf in Resources */,
+				624AFBF72514C6920096E9B0 /* Poppins-Light.ttf in Resources */,
+				624AFC012514C6920096E9B0 /* Poppins-Black.ttf in Resources */,
+				624AFC042514C6920096E9B0 /* Poppins-Italic.ttf in Resources */,
+				624AFBFB2514C6920096E9B0 /* Poppins-ExtraBold.ttf in Resources */,
+				624AFBFF2514C6920096E9B0 /* Poppins-LightItalic.ttf in Resources */,
 				62134AC525147DFE0009A526 /* LaunchScreen.storyboard in Resources */,
+				624AFBF92514C6920096E9B0 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				624AFBFE2514C6920096E9B0 /* Poppins-Regular.ttf in Resources */,
+				624AFBFA2514C6920096E9B0 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				624AFC002514C6920096E9B0 /* Poppins-Bold.ttf in Resources */,
+				624AFBF42514C6920096E9B0 /* Poppins-ThinItalic.ttf in Resources */,
+				624AFBF82514C6920096E9B0 /* Poppins-Medium.ttf in Resources */,
 				62134AC225147DFE0009A526 /* Assets.xcassets in Resources */,
 				62134AC025147DF80009A526 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +352,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62134ABD25147DF80009A526 /* ViewController.swift in Sources */,
+				62134ABD25147DF80009A526 /* LoginVC.swift in Sources */,
+				621610B0251BB77F00EF585D /* DashboardVC.swift in Sources */,
 				62134AB925147DF80009A526 /* AppDelegate.swift in Sources */,
-				62134ABB25147DF80009A526 /* SceneDelegate.swift in Sources */,
+				621610AE251BB76700EF585D /* ResetPasswordVC.swift in Sources */,
+				621610B2251BB79D00EF585D /* ProjectDetailVC.swift in Sources */,
+				621610B4251BBAA400EF585D /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,15 +530,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ME7EW8VVN3;
 				INFOPLIST_FILE = MYWIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosArchitect.MYWIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "MYWIM-2";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,15 +551,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ME7EW8VVN3;
 				INFOPLIST_FILE = MYWIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosArchitect.MYWIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "MYWIM-2";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
