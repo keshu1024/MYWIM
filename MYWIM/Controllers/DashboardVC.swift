@@ -7,33 +7,31 @@
 //
 
 import UIKit
-
-
-class InspectionCell : UITableViewCell {
-    
-    @IBOutlet weak var mainView : UIView!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-}
-
-class NotificationCell : UITableViewCell {
-    
-    @IBOutlet weak var mainView : UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-}
-
-
+import SDWebImage
 
 class DashboardVC: UIViewController {
     
     @IBOutlet weak var segmentBtn : UISegmentedControl!
     @IBOutlet weak var profileImage : UIImageView!
     @IBOutlet weak var tableView : UITableView!
+    
+    var inspectionData : [InspectionData] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+    var actionData : [ActionData] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+    var notificationData : [NotificationData] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +39,27 @@ class DashboardVC: UIViewController {
         tableView.delegate = self
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         segmentBtn.addTarget(self, action: #selector(semgmentValueChanged), for: .valueChanged)
+        profileImage.sd_setImage(with: URL(string: API.BASE_IMAGE_URL+(DEFAULTS.string(forKey: UserDetails.mPic) ?? "" )), placeholderImage: UIImage(named: "placeholderImage"), options: .scaleDownLargeImages, context: nil)
+
+        apiInspections()
     }
+    
+    //MARK: Segment changed
     
     @objc func semgmentValueChanged() {
+        
+        switch segmentBtn.selectedSegmentIndex {
+        case 0:
+            apiInspections()
+        case 1:
+            apiActions()
+        default:
+            apiNotifications()
+        }
         self.tableView.reloadData()
     }
-    
-    //MARK: IBAction
+
+    //MARK: Button Actions
 
     @IBAction func logoutBtnPressed(_ sender : Any) {
         let alert = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: .alert)
@@ -60,8 +72,64 @@ class DashboardVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    //MARK: API Call
+    
+    func apiInspections() {
+        APIManager.sharedObj.requestApi(API.INSPECTIONS+(DEFAULTS.string(forKey: UserDetails.masterUserID) ?? ""), method: .get, param: nil, showLoader: true) { (response, isSuccess, errorStr) in
+            if isSuccess {
+                // save inspections data
+                guard let data = response?["data"] as? [Dictionary<String,Any>] else { return }
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                    let decoder = JSONDecoder()
+                    let model = try decoder.decode([InspectionData].self, from: jsonData)
+                    self.inspectionData = model
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func apiActions() {
+        APIManager.sharedObj.requestApi(API.ACTIONS+(DEFAULTS.string(forKey: UserDetails.masterUserID) ?? ""), method: .get, param: nil, showLoader: true) { (response, isSuccess, errorStr) in
+            if isSuccess {
+                // save inspections data
+                guard let data = response?["data"] as? [Dictionary<String,Any>] else { return }
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                    let decoder = JSONDecoder()
+                    let model = try decoder.decode([ActionData].self, from: jsonData)
+                    self.actionData = model
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func apiNotifications() {
+        APIManager.sharedObj.requestApi(API.NOTIFICATIONS, method: .get, param: nil, showLoader: true) { (response, isSuccess, errorStr) in
+                if isSuccess {
+                    // save inspections data
+                    guard let data = response?["data"] as? [Dictionary<String,Any>] else { return }
+                    do {
+                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                        let decoder = JSONDecoder()
+                        let model = try decoder.decode([NotificationData].self, from: jsonData)
+                        self.notificationData = model
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+    }
+    
+    
+    
 }
 
+//MARK: TableView
 
 extension DashboardVC : UITableViewDataSource, UITableViewDelegate {
     
@@ -71,23 +139,32 @@ extension DashboardVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch segmentBtn.selectedSegmentIndex {
-        case 0,1:
+        case 0:
             let cell : InspectionCell  = self.tableView.dequeueReusableCell(withIdentifier: "InspectionCell", for: indexPath) as! InspectionCell
-            cell.mainView.addBorder()
+            cell.configureCell(data: inspectionData[indexPath.row], index: indexPath.row)
+            return cell
+        case 1:
+            let cell : InspectionCell  = self.tableView.dequeueReusableCell(withIdentifier: "InspectionCell", for: indexPath) as! InspectionCell
+            cell.configureCell(data: actionData[indexPath.row], index: indexPath.row)
             return cell
         case 2:
             let cell : NotificationCell  = self.tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
-            cell.mainView.addBorder()
+            cell.configureCell(data: notificationData[indexPath.row], index: indexPath.row)
             return cell
         default:
-            let cell : InspectionCell  = self.tableView.dequeueReusableCell(withIdentifier: "InspectionCell", for: indexPath) as! InspectionCell
-            cell.mainView.addBorder()
-            return cell
+            return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        switch segmentBtn.selectedSegmentIndex {
+        case 0:
+            return inspectionData.count
+        case 1:
+            return actionData.count
+        default:
+            return notificationData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

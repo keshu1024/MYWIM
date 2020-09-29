@@ -44,7 +44,7 @@ class APIManager {
                         if response.response?.statusCode == 200 {
                             if let jsonData = response.value as? NSDictionary {
                                 print(jsonData)
-                                if jsonData["status"] as!  Bool == true {
+                                if jsonData["status"] as? Bool == true || jsonData["status"] as? Int == 1 {
                                     completion(jsonData,true,nil)
                                 }else {
                                     completion(nil,false,jsonData["message"] as? String)
@@ -63,7 +63,7 @@ class APIManager {
                                     completion(nil,false,NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) as String?)
                                 }
                             }else {
-                                completion(nil,false,NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) as String?)
+                                completion(nil,false,"Network Error. Please Try Again Later.")
                             }
                         }
                 }
@@ -78,7 +78,7 @@ class APIManager {
                         if response.response?.statusCode == 200 {
                             if let jsonData = response.value as? NSDictionary {
                                 print(jsonData)
-                                if jsonData["status"] as? Bool == true {
+                                if jsonData["status"] as? Bool == true || jsonData["status"] as? Int == 1 {
                                     completion(jsonData,true,nil)
                                 }else {
                                     completion(jsonData,false,jsonData["message"] as? String)
@@ -98,7 +98,7 @@ class APIManager {
                                     completion(nil,false,NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) as String?)
                                 }
                             }else {
-                                completion(nil,false,NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) as String?)
+                                completion(nil,false,"Network Error. Please Try Again Later.")
                             }
                         }
                 }

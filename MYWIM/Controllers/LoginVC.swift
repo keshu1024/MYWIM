@@ -60,8 +60,23 @@ class LoginVC: UIViewController {
         
         APIManager.sharedObj.requestApi(API.LOGIN, method: .post, param: params, showLoader: true) { (response, isSuccess, errorStr) in
             if isSuccess {
-                // save user data and then move to next screen
-                APPDELEGATEOBJ.makeRootVC(vcName: "DashboardVC")
+                // save user data
+                guard let userData = response?["data"] as? [Dictionary<String,Any>] else {return}
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: userData[0], options: .prettyPrinted)
+                    let decoder = JSONDecoder()
+                    let model = try decoder.decode(UserResponseData.self, from: jsonData)
+                    DispatchQueue.main.async {
+                        UserDetails.setUserDetails(userRecords: model)
+                    }
+                    // move to dashboard
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
+                        print(DEFAULTS.string(forKey: UserDetails.mFirstName) ?? "Not found")
+                        APPDELEGATEOBJ.makeRootVC(vcName: "DashboardVC")
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
             } else {
                 Toast.show(message: errorStr ?? "Some Error Occured.", controller: self)
             }

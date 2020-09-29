@@ -49,7 +49,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLe-V7-cx5">
-                                        <rect key="frame" x="20" y="160" width="88" height="17"/>
+                                        <rect key="frame" x="20" y="160" width="95" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="Y7o-4B-cps"/>
                                         </constraints>
@@ -93,7 +93,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYWIM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-1m-ly8">
-                                <rect key="frame" x="20" y="259.5" width="374" height="35"/>
+                                <rect key="frame" x="20" y="252.5" width="374" height="42"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="30"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -182,7 +182,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYWIM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ7-tY-bmQ">
-                                <rect key="frame" x="20" y="278" width="374" height="35"/>
+                                <rect key="frame" x="20" y="271" width="374" height="42"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="30"/>
                                 <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -242,7 +242,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keshudp" translatesAutoresizingMaskIntoConstraints="NO" id="bsK-eN-UPC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="bsK-eN-UPC">
                                         <rect key="frame" x="324" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="0cp-h9-B5m"/>
@@ -493,7 +493,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonView" destination="Jzo-Mh-Hmw" id="v7p-nc-C8x"/>
+                                            <outlet property="checkLabel" destination="9WJ-FI-8td" id="1hD-aN-dAS"/>
+                                            <outlet property="endDateLabel" destination="Rit-c3-q4O" id="e5d-l9-Cq8"/>
+                                            <outlet property="locationLabel" destination="pjK-Dy-lCS" id="CKv-m5-ga7"/>
                                             <outlet property="mainView" destination="Oqd-pg-eFy" id="dd4-kO-eb0"/>
+                                            <outlet property="startDateLabel" destination="UeM-J6-6Mf" id="K5Y-Y3-Vi6"/>
+                                            <outlet property="topicLabel" destination="Ygx-Yo-2pe" id="7KT-5e-7Xq"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="84" id="uLb-UT-N6b" customClass="NotificationCell" customModule="MYWIM" customModuleProvider="target">
@@ -563,6 +569,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mainView" destination="BAB-YH-1Jq" id="ozD-BR-juQ"/>
+                                            <outlet property="notificationDate" destination="sKH-1g-0W5" id="Q1x-Ss-s4h"/>
+                                            <outlet property="notificationTitle" destination="3tV-Zb-kOE" id="F9h-IB-8rq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -970,7 +978,7 @@
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="bg" width="626" height="417"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
-        <image name="keshudp" width="1053" height="1053"/>
+        <image name="placeholderImage" width="600" height="400"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
