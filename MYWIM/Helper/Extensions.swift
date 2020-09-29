@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-let APPDELEGATEOBJ = UIApplication.shared.delegate as! AppDelegate
-
 
 extension UIViewController {
     func pushVC(vcName : String) {
@@ -29,4 +26,11 @@ extension UIView {
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 0.5
     }
+}
+
+extension String {
+    func trim() -> String {
+          let str = self.replacingOccurrences(of: " ", with: "")
+          return str
+      }
 }

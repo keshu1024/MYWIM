@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
         return true
     }
 
@@ -29,7 +31,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIView.transition(with: self.window!, duration: duration, options: options, animations: {}, completion: nil)
     }
     
-
+      
+      func showAlert(_ str : String) {
+          let alert = UIAlertController(title: "Error!", message: str, preferredStyle: .alert)
+          let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+          alert.addAction(alertAction)
+          self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+      }
+      
+      func showAlertWithTitle(title : String, _ str : String) {
+          let alert = UIAlertController(title: title, message: str, preferredStyle: .alert)
+          let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+          alert.addAction(alertAction)
+          self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+      }
+      
+      func showIndicator() {
+          IndicatorView.shared.show(controller: UIApplication.shared.keyWindow!.rootViewController!)
+      }
+      
+      
+      func hideIndicator() {
+          IndicatorView.shared.hide()
+      }
+    
 }
 
 
