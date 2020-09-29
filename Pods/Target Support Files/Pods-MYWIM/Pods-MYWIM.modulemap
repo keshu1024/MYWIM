@@ -1,0 +1,6 @@
+framework module Pods_MYWIM {
+  umbrella header "Pods-MYWIM-umbrella.h"
+
+  export *
+  module * { export * }
+}
