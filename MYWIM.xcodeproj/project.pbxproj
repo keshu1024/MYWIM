@@ -55,6 +55,11 @@
 		62CCEB6F25233E5D003C33BE /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB6E25233E5D003C33BE /* NotificationData.swift */; };
 		62CCEB7125234283003C33BE /* InspectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB7025234283003C33BE /* InspectionCell.swift */; };
 		62CCEB73252342B6003C33BE /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB72252342B6003C33BE /* NotificationCell.swift */; };
+		62CCEB7725234FCA003C33BE /* CheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB7625234FCA003C33BE /* CheckCell.swift */; };
+		62CCEB792523533E003C33BE /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB782523533E003C33BE /* QuestionData.swift */; };
+		62CCEB7B2523B0D6003C33BE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB7A2523B0D6003C33BE /* ImagePicker.swift */; };
+		62CCEB7D2523B674003C33BE /* GSImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB7C2523B674003C33BE /* GSImageViewerController.swift */; };
+		62CCEB7F2523CDC5003C33BE /* ActionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CCEB7E2523CDC5003C33BE /* ActionDetailVC.swift */; };
 		62E3320D251CA4F20041FD22 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3320C251CA4F20041FD22 /* Reachability.swift */; };
 		62E3320F251CA52B0041FD22 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 62E3320E251CA52B0041FD22 /* Podfile */; };
 		950A39F58152CAA516E23FFD /* Pods_MYWIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F7CF62F7D92D50329E7971 /* Pods_MYWIM.framework */; };
@@ -132,6 +137,11 @@
 		62CCEB6E25233E5D003C33BE /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		62CCEB7025234283003C33BE /* InspectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionCell.swift; sourceTree = "<group>"; };
 		62CCEB72252342B6003C33BE /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		62CCEB7625234FCA003C33BE /* CheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCell.swift; sourceTree = "<group>"; };
+		62CCEB782523533E003C33BE /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		62CCEB7A2523B0D6003C33BE /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		62CCEB7C2523B674003C33BE /* GSImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSImageViewerController.swift; sourceTree = "<group>"; };
+		62CCEB7E2523CDC5003C33BE /* ActionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDetailVC.swift; sourceTree = "<group>"; };
 		62E3320C251CA4F20041FD22 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		62E3320E251CA52B0041FD22 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		73ABC5AB606BC9151E3C2A2B /* Pods-MYWIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYWIM.release.xcconfig"; path = "Target Support Files/Pods-MYWIM/Pods-MYWIM.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +241,7 @@
 				621610AD251BB76700EF585D /* ResetPasswordVC.swift */,
 				621610AF251BB77F00EF585D /* DashboardVC.swift */,
 				621610B1251BB79D00EF585D /* ProjectDetailVC.swift */,
+				62CCEB7E2523CDC5003C33BE /* ActionDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 				62CCEB6A25233934003C33BE /* InspectionData.swift */,
 				62CCEB6C25233DD5003C33BE /* ActionData.swift */,
 				62CCEB6E25233E5D003C33BE /* NotificationData.swift */,
+				62CCEB782523533E003C33BE /* QuestionData.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -252,6 +264,7 @@
 			children = (
 				62CCEB7025234283003C33BE /* InspectionCell.swift */,
 				62CCEB72252342B6003C33BE /* NotificationCell.swift */,
+				62CCEB7625234FCA003C33BE /* CheckCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +276,8 @@
 				621610B3251BBAA400EF585D /* Extensions.swift */,
 				621610BD251CA12F00EF585D /* APIManager.swift */,
 				62E3320C251CA4F20041FD22 /* Reachability.swift */,
+				62CCEB7A2523B0D6003C33BE /* ImagePicker.swift */,
+				62CCEB7C2523B674003C33BE /* GSImageViewerController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -529,14 +544,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				62CCEB692522780C003C33BE /* Toast.swift in Sources */,
+				62CCEB7725234FCA003C33BE /* CheckCell.swift in Sources */,
 				62CCEB7125234283003C33BE /* InspectionCell.swift in Sources */,
+				62CCEB7B2523B0D6003C33BE /* ImagePicker.swift in Sources */,
 				62CCEB6B25233934003C33BE /* InspectionData.swift in Sources */,
+				62CCEB7D2523B674003C33BE /* GSImageViewerController.swift in Sources */,
 				62CCEB6F25233E5D003C33BE /* NotificationData.swift in Sources */,
 				62134ABD25147DF80009A526 /* LoginVC.swift in Sources */,
 				62CCEB6D25233DD5003C33BE /* ActionData.swift in Sources */,
+				62CCEB792523533E003C33BE /* QuestionData.swift in Sources */,
 				621610B0251BB77F00EF585D /* DashboardVC.swift in Sources */,
 				62CCEB66252271E3003C33BE /* GradientView.swift in Sources */,
 				621610BA251C9DFF00EF585D /* UserResponseData.swift in Sources */,
+				62CCEB7F2523CDC5003C33BE /* ActionDetailVC.swift in Sources */,
 				621610BE251CA12F00EF585D /* APIManager.swift in Sources */,
 				62CCEB73252342B6003C33BE /* NotificationCell.swift in Sources */,
 				62CCEB5F252271E3003C33BE /* IndicatorView.swift in Sources */,

@@ -8,31 +8,41 @@
 
 import UIKit
 import SDWebImage
+import Lottie
 
 class DashboardVC: UIViewController {
     
     @IBOutlet weak var segmentBtn : UISegmentedControl!
     @IBOutlet weak var profileImage : UIImageView!
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var lottieAnimationView : AnimationView!
+    @IBOutlet weak var emptyView : UIView!
     
     var inspectionData : [InspectionData] = [] {
         didSet {
+            emptyView.isHidden = !inspectionData.isEmpty
             self.tableView.reloadData()
         }
     }
     
     var actionData : [ActionData] = [] {
         didSet {
+            emptyView.isHidden = !actionData.isEmpty
             self.tableView.reloadData()
         }
     }
     
     var notificationData : [NotificationData] = [] {
         didSet {
+            emptyView.isHidden = !notificationData.isEmpty
             self.tableView.reloadData()
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        applyLottieAnimation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -40,8 +50,20 @@ class DashboardVC: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         segmentBtn.addTarget(self, action: #selector(semgmentValueChanged), for: .valueChanged)
         profileImage.sd_setImage(with: URL(string: API.BASE_IMAGE_URL+(DEFAULTS.string(forKey: UserDetails.mPic) ?? "" )), placeholderImage: UIImage(named: "placeholderImage"), options: .scaleDownLargeImages, context: nil)
-
+        emptyView.isHidden = true
         apiInspections()
+    }
+    
+    
+    func applyLottieAnimation() {
+        
+        let animationToShow = Animation.named("noDataAnimation")
+        lottieAnimationView.animation = animationToShow
+        lottieAnimationView.animationSpeed = 1.0
+        lottieAnimationView.loopMode = .loop
+        lottieAnimationView.contentMode = .scaleAspectFill
+        lottieAnimationView.play()
+        
     }
     
     //MARK: Segment changed
@@ -62,14 +84,31 @@ class DashboardVC: UIViewController {
     //MARK: Button Actions
 
     @IBAction func logoutBtnPressed(_ sender : Any) {
-        let alert = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: .alert)
-        let yes = UIAlertAction(title: "Yes", style: .default) { (_) in
-            APPDELEGATEOBJ.makeRootVC(vcName: "LoginVC")
+        let alert = UIAlertController(title: "Options", message: "Do you want to logout or reset password?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Logout", style: .default) { (_) in
+            self.logout()
         }
-        let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        let resetPassword = UIAlertAction(title: "Reset Password", style: .default) { (_) in
+            self.pushVC(vcName: "ResetPasswordVC")
+        }
+        let no = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         alert.addAction(yes)
+        alert.addAction(resetPassword)
         alert.addAction(no)
+
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func logout() {
+        keychain.clear()
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+        defaults.synchronize()
+        APPDELEGATEOBJ.makeRootVC(vcName: "LoginVC")
     }
     
     //MARK: API Call
@@ -87,6 +126,8 @@ class DashboardVC: UIViewController {
                 } catch {
                     print(error.localizedDescription)
                 }
+            } else {
+                self.emptyView.isHidden = false
             }
         }
     }
@@ -104,6 +145,8 @@ class DashboardVC: UIViewController {
                 } catch {
                     print(error.localizedDescription)
                 }
+            } else {
+                self.emptyView.isHidden = false
             }
         }
     }
@@ -121,6 +164,8 @@ class DashboardVC: UIViewController {
                     } catch {
                         print(error.localizedDescription)
                     }
+                } else {
+                    self.emptyView.isHidden = false
                 }
             }
     }
@@ -177,8 +222,15 @@ extension DashboardVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if segmentBtn.selectedSegmentIndex == 0 || segmentBtn.selectedSegmentIndex == 1 {
-            self.pushVC(vcName: "ProjectDetailVC")
+        if segmentBtn.selectedSegmentIndex == 0 {
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "ProjectDetailVC") as! ProjectDetailVC
+            vc.inspectionData = self.inspectionData[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if segmentBtn.selectedSegmentIndex == 1 {
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "ActionDetailVC") as! ActionDetailVC
+            vc.actionData = self.actionData[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

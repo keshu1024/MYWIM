@@ -30,7 +30,7 @@ class ResetPasswordVC: UIViewController {
         else if confirmPasswordField.text!.trim() == "" {
             message = "Please Enter The Password Again To Confirm"
         }
-        else if passwordField.text!.trim() == confirmPasswordField.text!.trim() {
+        else if passwordField.text!.trim() != confirmPasswordField.text!.trim() {
             message = "Password Do Not Match. Please Enter Again."
         }
         else {
@@ -56,12 +56,14 @@ class ResetPasswordVC: UIViewController {
     
     func apiResetPassword() {
         let params = [
-            "id" : "master_user_id",
+            "id" : DEFAULTS.string(forKey: UserDetails.masterUserID) ?? "",
             "m_password" : passwordField.text!.trim()
         ]
+        
         APIManager.sharedObj.requestApi(API.RESET_PASSWORD, method: .post, param: params, showLoader: true) { (response, isSuccess, errorStr) in
             if isSuccess {
-                
+                self.popVC()
+                APPDELEGATEOBJ.showAlertWithTitle(title: "Success", "Your Password Has Been Reset Successfully.")
             } else {
                 Toast.show(message: errorStr ?? "Some Error Occured." , controller: self)
             }

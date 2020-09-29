@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Datum
+// MARK: - InspectionData
 struct InspectionData: Codable {
     var inspectionID, location, employeeName, startDate: String?
     var endDate, status, project, topicName: String?

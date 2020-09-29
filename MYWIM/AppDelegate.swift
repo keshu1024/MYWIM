@@ -15,9 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        checkSession()
         return true
+    }
+    
+    func checkSession() {
+        if DEFAULTS.string(forKey: UserDetails.masterUserID) == nil || DEFAULTS.string(forKey: UserDetails.masterUserID) == "" {
+            APPDELEGATEOBJ.makeRootVC(vcName: "LoginVC")
+        } else {
+            APPDELEGATEOBJ.makeRootVC(vcName: "DashboardVC")
+        }
     }
 
     

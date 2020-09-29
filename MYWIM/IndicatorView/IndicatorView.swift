@@ -55,7 +55,7 @@ class IndicatorView : UIView {
     
     func applyLottieAnimation() {
         
-        let animationToShow = Animation.named("scissor-loader")
+        let animationToShow = Animation.named("loading")
         loadingAnimation.animation = animationToShow
         loadingAnimation.animationSpeed = 1.0
         loadingAnimation.loopMode = .loop
@@ -76,8 +76,8 @@ class IndicatorView : UIView {
         self.centerYAnchor.constraint(equalTo: activeWindow.centerYAnchor).isActive = true
         self.addSubview(loadingAnimation)
         
-        loadingAnimation.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        loadingAnimation.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        loadingAnimation.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        loadingAnimation.widthAnchor.constraint(equalToConstant: 150).isActive = true
         loadingAnimation.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         loadingAnimation.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         loadingAnimation.backgroundColor = .clear // UIColor(red: 48/255, green: 72/255, blue: 96/255, alpha: 1.0)

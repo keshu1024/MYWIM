@@ -18,6 +18,9 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         passwordField.isSecureTextEntry = true
         loginBtn.layer.cornerRadius = 10
+        
+        usernameField.text = "jalphino"
+        passwordField.text = "Welkom01"
     }
 
     //MARK: Field Validation
