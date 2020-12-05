@@ -18,9 +18,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         passwordField.isSecureTextEntry = true
         loginBtn.layer.cornerRadius = 10
-        
-        usernameField.text = "jalphino"
-        passwordField.text = "Welkom01"
+ 
     }
 
     //MARK: Field Validation
@@ -56,7 +54,7 @@ class LoginVC: UIViewController {
     
     func apiLogin() {
         let params = [
-            "user_token" : UUID().uuidString ,
+            "user_token" : DEVICE_TOKEN == "" ? UUID().uuidString : DEVICE_TOKEN,
             "m_user_name" : usernameField.text!,
             "m_password": passwordField.text!
         ]

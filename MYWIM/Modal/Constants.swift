@@ -14,6 +14,7 @@ let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
 let APPDELEGATEOBJ = UIApplication.shared.delegate as! AppDelegate
 let DEFAULTS = UserDefaults.standard
 let keychain = KeychainSwift()
+var DEVICE_TOKEN = ""
 
 
 struct API {
