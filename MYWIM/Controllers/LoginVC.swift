@@ -56,7 +56,8 @@ class LoginVC: UIViewController {
         let params = [
             "user_token" : DEVICE_TOKEN == "" ? UUID().uuidString : DEVICE_TOKEN,
             "m_user_name" : usernameField.text!,
-            "m_password": passwordField.text!
+            "m_password": passwordField.text!,
+            "device_type": "ios"
         ]
         
         APIManager.sharedObj.requestApi(API.LOGIN, method: .post, param: params, showLoader: true) { (response, isSuccess, errorStr) in
